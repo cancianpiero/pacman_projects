@@ -1,4 +1,4 @@
-# Pac-Man Search
+# Project 1: Search
 
 This is my implementation of a program that trains an AI agent to play the classic arcade game of Pac-Man, developed by [UC Berkeley](http://ai.berkeley.edu). Its purpose is to demonstrate the use of map-searching algorithms and heuristics - 'heuristic' being a term that simply means a method of solving a problem.
 
