@@ -1,38 +1,39 @@
-# Projet 1 : PacMan
+# Pac-Man Search
 
-------Solved Questions------
------modified functions-----
+This is my implementation of a program that trains an AI agent to play the classic arcade game of Pac-Man, developed by [UC Berkeley](http://ai.berkeley.edu). Its purpose is to demonstrate the use of map-searching algorithms and heuristics - 'heuristic' being a term that simply means a method of solving a problem.
 
+### Description
 
---------'search.py'---------
+The parts of the code completed by me are in `search.py` and `searchAgents.py`, in sections marked `"*** YOUR CODE HERE ***"`.
 
-1. Finding a Fixed Food Dot using Depth First Search:
-- depthFirstSearch
+`search.py` contains four different algorithms used by AIs to search simulated spaces:
 
-2. Breadth First Search:
-- breadthFirstSearch
+- Depth-first search, in which a branch of a search tree is chosen and explored branch-by-branch along a sequence of nodes until an end is reachedCollegem, and the search starts over from the root to arefollow a new path of branches.
 
-3. Varying the Cost Function:
-- uniformCostSearch
+- Breadth-first search, in which all nodes on one level of a search tree are explored before moving along to the nodes on the next level.
 
-4. A* search:
-- aStarSearch
+- Uniform-cost search, also known as cheapest-first search, in which the cost of taking each branch in the path is calculated, and the possible paths are explored in order from lowest cost to highest.
 
+- A* (A-star) search, in which the path to explore along the search tree is chosen by a calculation that combines the cost of moving to a given node with the cost of moving from that node to the final destination. Like uniform-cost search, this search progresses from the path with the lowest cost to the highest.
 
------'searchAgents.py'-----
+`searchAgents.py` defines the Pac-Man agent's goals and search heuristics. The parts of the program intended to be altered by the user are:
 
-5. Finding All the Corners:
-- getStartState
-- isGoalState
-- getSuccessors
+- The class `CornersProblem`, which sets the goal of exploring all four corners of the Pac-Man game space.
 
-6. Corners Problem: Heuristic:
-- cornersHeuristic
+- The function `cornersHeuristic`, which tells the Pac-Man agent how to visit all four corners of the game space by taking the shortest possible route.
 
-7. Eating All The Dots:
-- foodHeuristic
+- The function `foodHeuristic`, which tells the Pac-Man agent how to collect food capsules by taking the shortest possible route.
 
-8. Suboptimal Search:
-- findPathToClosestDot
-- isGoalState
+- The class `AnyFoodSearchProblem`, which sets the goal of finding food capsules.
 
+### Usage
+
+You can run all of the test cases on this code by opening a terminal and executing the command:
+
+    $ python autograder.py
+
+You can also run individual test cases by executing the command (you can replace "q1" with any of the choices q1-q8):
+
+    $ python autograder.py -q q1
+
+To watch a Pac-Man game progress, use the `pacman.py` script to animate the agent searching various domains. You can do this by executing any of the commands in `commands.txt`.
